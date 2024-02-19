@@ -8,21 +8,18 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Your Google Sheets API endpoint
     const sheetId = '795123173';
-    const range = 'Sheet1!D4:E4'; // Specify the range (row and column)
+    const range = 'Sheet1!D4:E4'; 
 
-    // Your API request
     try {
       await axios.post(
         `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}`,
         {
-          values: [[name]], // Data to be sent
+          values: [[name]], 
         },
         {
           params: {
-            key: 'AIzaSyAsxYoeup-Yh77VNfO1S-ECUmWUbRU0lsQ', // Your API key
+            key: 'AIzaSyAsxYoeup-Yh77VNfO1S-ECUmWUbRU0lsQ', 
           },
         }
       );
